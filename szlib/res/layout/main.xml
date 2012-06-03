@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background" >
+
+    <include
+        android:id="@+id/titlebar"
+        layout="@layout/titlebar" />
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titlebar"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="5.0dip"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/v_value"
+            style="@style/my_edittext_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/contact_search_edit"
+            android:hint="@string/edit_key"
+            android:imeOptions="actionDone"
+            android:paddingLeft="55.0px"
+            android:paddingRight="26.0px"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/v_value"
+            android:layout_alignLeft="@id/v_value"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/selector_btnsarch_bg" />
+
+        <Button
+            android:id="@+id/btSearchClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/v_value"
+            android:layout_alignRight="@id/v_value"
+            android:layout_marginRight="10.0px"
+            android:background="@drawable/search_button_clear"
+            android:paddingTop="5.0dip"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5.0dip"
+        android:gravity="center" >
+
+        <Button
+            android:id="@android:id/button1"
+            android:layout_width="245.0dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_selector"
+            android:text="@string/btn_query"
+            android:textColor="@android:color/white"
+            android:textSize="22.0sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/top" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/textview_blod_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/label_type" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:background="@drawable/listitem_bg" >
+
+                <TableRow android:layout_marginLeft="40.0dip" >
+
+                    <CheckBox
+                        android:id="@+id/b_type_book"
+                        style="@style/ck_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/label_type_book" />
+
+                    <CheckBox
+                        android:id="@+id/b_type_elecbook"
+                        style="@style/ck_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40.0dip"
+                        android:text="@string/label_type_elecbook" />
+                </TableRow>
+
+                <TableRow android:layout_marginLeft="40.0dip" >
+
+                    <CheckBox
+                        android:id="@+id/b_type_qikan"
+                        style="@style/ck_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_type_qikan" />
+
+                    <CheckBox
+                        android:id="@+id/b_type_sound"
+                        style="@style/ck_bg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40.0dip"
+                        android:text="@string/label_type_sound" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/b_index"
+                style="@style/textview_blod_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/label_index" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:background="@drawable/listitem_bg"
+                android:orientation="vertical" >
+
+                <Spinner
+                    android:id="@+id/b_index_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_bg"
+                    android:entries="@array/index"
+                    android:paddingLeft="15.0dip" />
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/cirtype1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radiobutton_bg"
+                        android:text="@string/lable_cirtype1"
+                        android:textColor="@color/selector_ck_color" />
+
+                    <RadioButton
+                        android:id="@+id/cirtype2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radiobutton_bg"
+                        android:text="@string/lable_cirtype2"
+                        android:textColor="@color/selector_ck_color" />
+
+                    <RadioButton
+                        android:id="@+id/cirtype3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radiobutton_bg"
+                        android:text="@string/lable_cirtype3"
+                        android:textColor="@color/selector_ck_color" />
+
+                    <RadioButton
+                        android:id="@+id/cirtype4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_radiobutton_bg"
+                        android:checked="true"
+                        android:text="@string/lable_cirtype4"
+                        android:textColor="@color/selector_ck_color" />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

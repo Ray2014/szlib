@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="my_edittext_style" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/selector_edittext_bg</item>
+    </style>
+    <style name="textview_blod_dark">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/tertiary_text_dark</item>
+    </style>
+    <style name="textview_blod_white">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="text_common">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="ck_bg" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/selector_ck_color</item>
+        <item name="android:button">@drawable/selector_checkbox_bg</item>
+    </style>
+</resources>

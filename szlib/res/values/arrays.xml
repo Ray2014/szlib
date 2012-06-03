@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="index">
+        <item>书　名</item>
+        <item>任意词</item>
+        <item>关键词</item>
+        <item>分类号</item>
+        <item>作　者</item>
+        <item>ISBN</item>
+        <item>索书号</item>
+        <item>出版社</item>
+    </string-array>
+   
+</resources>

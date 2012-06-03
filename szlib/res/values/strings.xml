@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SzlibActivity!</string>
+    <string name="app_name">深圳图书馆查询系统</string>
+    <string name="btn_query">查询</string>
+    <string name="edit_key">请输入关键字</string>
+    <string name="label_type">文献类型:</string>
+    <string name="label_type_book">图书</string>
+    <string name="label_type_qikan">期刊</string>
+    <string name="label_type_elecbook">电子书</string>
+    <string name="label_type_sound">音像资料</string>
+    <string name="label_index">检索途径:</string>
+    <string name="lable_cirtype1">预借</string>
+    <string name="lable_cirtype2">外借</string>
+    <string name="lable_cirtype3">阅览</string>
+    <string name="lable_cirtype4">全部</string>
+    <string name="msg_error">查询遇到错误，请检查网络是否开启.</string>
+    <string name="msg_nolist">共有 0 条记录.</string>
+    <string name="b_detail">详细信息</string>
+    <string name="lookmore">查看更多 …</string>
+    <string name="loading">正在加载中 …</string>
+    <string name="onlibrary">在馆馆藏</string>
+    <string name="outlibrary">已借出馆藏</string>
+    
+</resources>

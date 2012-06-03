@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1" android:versionName="1.0" android:windowSoftInputMode="adjustPan" package="com.app4joy.szlib"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExportedService">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <meta-data android:name="UMENG_APPKEY" android:value="4fca377b527015766e000095" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="360" />
+        <activity android:label="@string/app_name" android:name=".SzlibActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ShowQueryActivity" />
+        <activity android:name=".ShowDetailActivity" />
+        <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.umeng.fb.ui.FeedbackConversations" />
+        <activity android:name="com.umeng.fb.ui.FeedbackConversation" android:configChanges="keyboard" />
+        <service android:name="com.umeng.common.net.DownloadingService" android:exported="true" android:process=":DownloadingService" />
+    </application>
+</manifest>

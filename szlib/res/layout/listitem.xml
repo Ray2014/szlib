@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/listitem_bg" >
+
+    <TextView
+        android:id="@+id/b_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ff000000"
+        android:textSize="18.0sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/b_text"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_below="@id/b_title"
+        android:textSize="14.0sp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/b_text"
+        android:layout_marginTop="3.0dip"
+        android:background="@drawable/c2" />
+
+    <TextView
+        android:id="@+id/b_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/b_text"
+        android:layout_marginTop="5.0dip"
+        android:ellipsize="middle"
+        android:ems="10"
+        android:lines="1"
+        android:textSize="16.0sp" />
+
+    <TextView
+        android:id="@+id/b_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/b_author"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@drawable/detail_icon"
+        android:text="@string/b_detail"
+        android:textColor="#ff46abe3"
+        android:textSize="16.0sp" />
+
+</RelativeLayout>
