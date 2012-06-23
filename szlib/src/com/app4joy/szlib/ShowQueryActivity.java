@@ -95,6 +95,8 @@ public class ShowQueryActivity extends ListActivity implements OnScrollListener 
 				}
 			} catch (Exception e) {
 				MobclickAgent.reportError(context,e.getMessage()) ;
+				//Log.e(tag, e.getMessage());
+				//e.printStackTrace();
 				msg.what = msg_error;
 			}
 			msg.sendToTarget();

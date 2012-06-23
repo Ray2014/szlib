@@ -19,7 +19,6 @@ import android.net.NetworkInfo;
 
 public class HttpUtil {
 
-
 	/**
 	 * 获取网络连接
 	 * 
@@ -27,7 +26,8 @@ public class HttpUtil {
 	 * @return
 	 * @throws Exception
 	 */
-	public static HttpURLConnection getConnection(Context context,String path) throws Exception {
+	public static HttpURLConnection getConnection(Context context, String path)
+			throws Exception {
 		HttpURLConnection conn = null;
 		URL url = new URL(path);
 		boolean isProxy = false;
@@ -64,31 +64,34 @@ public class HttpUtil {
 	 * @throws ClientProtocolException
 	 * @throws IOException
 	 */
-	public static String getHtml(Context context,String path) throws Exception {
+	public static String getHtml(Context context, String path) throws Exception {
 		String html = "";
-		HttpURLConnection conn = getConnection(context,path);
+		HttpURLConnection conn = getConnection(context, path);
 		conn.setConnectTimeout(8000);
 		conn.setRequestMethod("GET");
-		conn.setRequestProperty("Cache-Control","no-cache");
+		conn.setRequestProperty("Cache-Control", "no-cache");
 		conn.setRequestProperty("Host", "szlib.gov.cn");
-		conn.setRequestProperty("Accept-Encoding","gzip, deflate");
+		conn.setRequestProperty("Accept-Encoding", "gzip, deflate");
 		conn.setUseCaches(false);
 		if (conn.getResponseCode() == 200) {
-			InputStream inputStream;
+			InputStream inputStream = null;
 			String encoding = conn.getContentEncoding();
-			if (-1!=encoding.indexOf("gzip")) {
-				inputStream = new GZIPInputStream(conn.getInputStream());
-			}else if (-1!=encoding.indexOf("deflate")) {
-				inputStream = new InflaterInputStream(conn.getInputStream());
-			}else{
+			if (encoding != null) {
+				if (-1 != encoding.indexOf("gzip")) {
+					inputStream = new GZIPInputStream(conn.getInputStream());
+				} else if (-1 != encoding.indexOf("deflate")) {
+					inputStream = new InflaterInputStream(conn.getInputStream());
+				}
+			} else {
 				inputStream = conn.getInputStream();
 			}
-			html = new String(read(inputStream),"UTF-8");
+
+			html = new String(read(inputStream), "UTF-8");
 		}
 		conn.disconnect();
 		return html;
 	}
-	
+
 	/**
 	 * 从流中读取二进制数据
 	 * 

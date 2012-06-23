@@ -37,6 +37,7 @@ public class Query {
 		Document doc = Jsoup.parse(HttpUtil.getHtml(context,path));
 		Element num = doc.select("strong.num").first();
 		total = Integer.parseInt(num.text());
+		Log.i(tag, "total:"+total);
 		return total;
 	}
 
@@ -64,6 +65,7 @@ public class Query {
 			list.add(info);
 			count++;
 		}
+		Log.i(tag, "List<BookInfo> :"+list.size());
 		return list;
 	}
 }
